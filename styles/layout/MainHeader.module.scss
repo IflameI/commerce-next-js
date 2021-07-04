@@ -1,0 +1,30 @@
+@import '../mixins.scss';
+
+.header {
+  background-color: #1d3048;
+  &__top {
+    padding: 20px;
+  }
+  &__bottom {
+    padding: 9px 20px 9px 20px;
+  }
+  &__list {
+    @include flexbox();
+    li {
+      margin: 0 25px 0 0px;
+      font-weight: 500;
+    }
+  }
+  &__title {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  &__subtitle {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  &__bottom {
+    border-top: 1px solid #fff;
+  }
+}
