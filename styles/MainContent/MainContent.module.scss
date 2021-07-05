@@ -8,7 +8,6 @@
   }
   &__info {
     padding-top: 45px;
-    padding-left: 76px;
   }
   &__title {
     margin-bottom: 10px;
@@ -20,6 +19,10 @@
   }
   &__wrapper {
     @include flexbox();
+  }
+  &__content {
+    padding-left: 76px;
+    padding-right: 76px;
   }
   &__circle {
     overflow: hidden;
