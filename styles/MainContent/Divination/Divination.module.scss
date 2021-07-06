@@ -3,6 +3,7 @@
     font-size: 34px;
     font-weight: 500;
     margin-bottom: 10px;
+    padding-top: 40px;
   }
   &__description {
     font-size: 16px;
@@ -12,11 +13,13 @@
     display: flex;
     margin: 0 -10px;
     flex-wrap: wrap;
+    padding-top: 10px;
   }
   &__column {
     flex: 0 1 33.333%;
     padding: 0 10px;
     margin-bottom: 25px;
+    display: flex;
   }
   &__item {
     background: #fff;
@@ -29,13 +32,23 @@
       width: 100%;
     }
   }
+  &__test {
+    width: 100%;
+    display: flex;
+  }
+  &__img {
+    width: 100%;
+    div {
+      width: 100%;
+    }
+  }
   &__name {
     padding: 10px 10px;
     font-weight: 500;
     font-size: 16px;
   }
   &__text {
-    padding: 0 10px;
+    padding: 0px 10px 10px 10px;
     font-size: 16px;
     line-height: 20px;
   }

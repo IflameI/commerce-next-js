@@ -27,3 +27,6 @@ export { default as fishSvg } from '../public/fish.svg';
 export { default as usuallyCards } from '../public/usually-card.jpg';
 export { default as yesNoImg } from '../public/yes-no.jpg';
 export { default as loveImg } from '../public/love.jpg';
+export { default as revnostImg } from '../public/revnost.jpg';
+export { default as hristmansImg } from '../public/hristmans.jpg';
+export { default as marriageImg } from '../public/marriage.jpg';
