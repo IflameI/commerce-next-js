@@ -1,11 +1,17 @@
-import Image from 'next/image';
+import { MainContentInfo, Symbols, Divination } from '..';
 
 import styles from '../../styles/MainContent/MainContent.module.scss';
-import { MainContentInfo, infoImg, Symbols, Divination } from '..';
 
-const MainContent: React.FC = () => {
+interface IMainContent {
+  zodiacs: any;
+}
+
+const MainContent: React.FC<IMainContent> = ({ zodiacs }) => {
   return (
     <section className={styles.mainContent}>
+      {/* {arrayZodiac.map((zodiac: any, index: number) => (
+        <p key={`${index}__${zodiacs.name}`}>{zodiac[0].elements[0].text}</p>
+      ))} */}
       <div className={styles.mainContent__top}>
         <div className={styles.mainContent__item}>
           <p className={styles.mainContent__itemText}>
@@ -18,7 +24,7 @@ const MainContent: React.FC = () => {
       <div className={styles.mainContent__content}>
         <MainContentInfo />
         <Divination />
-        <Symbols />
+        <Symbols zodiacs={zodiacs} />
       </div>
     </section>
   );

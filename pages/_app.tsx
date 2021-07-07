@@ -1,12 +1,21 @@
 import { Layout } from '../components';
-import '../styles/globals.scss';
 import type { AppProps } from 'next/app';
+import '../styles/globals.scss';
+import { Provider } from 'react-redux';
+import { store } from '../redux/store';
+import { createWrapper } from 'next-redux-wrapper';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <Provider store={store}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </Provider>
   );
 }
-export default MyApp;
+
+const makeStore = () => store;
+const wrapper = createWrapper(makeStore);
+
+export default wrapper.withRedux(MyApp);

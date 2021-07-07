@@ -1,10 +1,13 @@
 import { MainHeader } from '..';
+import styles from '../../styles/Home.module.scss';
 
 const Layout: React.FC = ({ children }) => {
   return (
     <div className='container'>
       <MainHeader />
-      <main>{children}</main>
+      <div className={styles.wrapper}>
+        <main>{children}</main>
+      </div>
     </div>
   );
 };
