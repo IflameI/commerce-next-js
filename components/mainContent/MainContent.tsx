@@ -1,17 +1,12 @@
 import { MainContentInfo, Symbols, Divination } from '..';
+import { useTypedSelector } from '../../redux/typeHooks/useTypedSelector';
 
 import styles from '../../styles/MainContent/MainContent.module.scss';
 
-interface IMainContent {
-  zodiacs: any;
-}
-
-const MainContent: React.FC<IMainContent> = ({ zodiacs }) => {
+const MainContent: React.FC = () => {
+  const { items } = useTypedSelector((state) => state.zodiac);
   return (
     <section className={styles.mainContent}>
-      {/* {arrayZodiac.map((zodiac: any, index: number) => (
-        <p key={`${index}__${zodiacs.name}`}>{zodiac[0].elements[0].text}</p>
-      ))} */}
       <div className={styles.mainContent__top}>
         <div className={styles.mainContent__item}>
           <p className={styles.mainContent__itemText}>
@@ -24,7 +19,9 @@ const MainContent: React.FC<IMainContent> = ({ zodiacs }) => {
       <div className={styles.mainContent__content}>
         <MainContentInfo />
         <Divination />
-        <Symbols zodiacs={zodiacs} />
+        {items.data.elements[0].elements !== undefined && (
+          <Symbols zodiacs={items.data.elements[0].elements} />
+        )}
       </div>
     </section>
   );

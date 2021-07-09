@@ -8,14 +8,8 @@ export const fetchZodiac = () => {
   return async (dispatch: Dispatch<zodiacActions>) => {
     try {
       dispatch({ type: zodiacActionType.FETCH_ZODIAC_PENDING });
-      const response: any = await axios.get('https://ignio.com/r/export/utf/xml/daily/com.xml', {
-        headers: {
-          'Content-Type': 'application/xml',
-        },
-      });
-      const result = xml2json(response.data, { compact: false, spaces: 4 });
-      const zodiacs = JSON.parse(result);
-      dispatch({ type: zodiacActionType.FETCH_ZODIAC_SUCCESS, payload: zodiacs });
+      const response: any = await axios.get('api/');
+      dispatch({ type: zodiacActionType.FETCH_ZODIAC_SUCCESS, payload: response });
     } catch (e) {
       dispatch({
         type: zodiacActionType.FETCH_ZODIAC_ERROR,
