@@ -3,8 +3,11 @@ import { useTypedSelector } from '../../redux/typeHooks/useTypedSelector';
 
 import styles from '../../styles/MainContent/MainContent.module.scss';
 
-const MainContent: React.FC = () => {
-  const { items } = useTypedSelector((state) => state.zodiac);
+interface IMainContent {
+  items: any;
+}
+
+const MainContent: React.FC<IMainContent> = ({ items }) => {
   return (
     <section className={styles.mainContent}>
       <div className={styles.mainContent__top}>
@@ -19,9 +22,7 @@ const MainContent: React.FC = () => {
       <div className={styles.mainContent__content}>
         <MainContentInfo />
         <Divination />
-        {items.data.elements[0].elements !== undefined && (
-          <Symbols zodiacs={items.data.elements[0].elements} />
-        )}
+        <Symbols zodiacs={items.elements[0].elements} />
       </div>
     </section>
   );

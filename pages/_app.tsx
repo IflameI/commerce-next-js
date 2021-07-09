@@ -3,24 +3,14 @@ import App from 'next/app';
 import type { AppProps } from 'next/app';
 import '../styles/globals.scss';
 import { Provider } from 'react-redux';
-import { useStore } from '../redux/store';
+import { wrapper } from '../redux/store';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const store = useStore(pageProps.initialReduxState);
   return (
-    <Provider store={store}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </Provider>
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   );
 }
 
-// MyApp.getInitialProps = async (appContext: any) => {
-//   // calls page's `getInitialProps` and fills `appProps.pageProps`
-//   const appProps = await App.getInitialProps(appContext);
-
-//   return { ...appProps };
-// };
-
-export default MyApp;
+export default wrapper.withRedux(MyApp);
