@@ -18,23 +18,12 @@ import styles from '../../../styles/MainContent/Zodiacs/Symbols.module.scss';
 
 import Link from 'next/link';
 
-interface ISymbols {
-  zodiacs: any;
-}
-
-const Symbols: React.FC<ISymbols> = ({ zodiacs }) => {
-  const arrayZodiac: any = [];
-  let tempFunction = zodiacs.forEach((zodiac: any) => {
-    if (zodiac.elements !== undefined) {
-      arrayZodiac.push(zodiac.elements);
-    }
-  });
+const Symbols: React.FC = () => {
   const zodiacContent = [
     {
       id: 1,
       name: 'Овен',
       type: 'aries',
-      content: arrayZodiac[0],
       img: ariesSvg,
       alt: 'Изображение овна',
       date: '04.07.2021',
@@ -43,9 +32,40 @@ const Symbols: React.FC<ISymbols> = ({ zodiacs }) => {
       id: 2,
       name: 'Рак',
       type: 'cancer',
-      content: arrayZodiac[1],
       img: cancerSvg,
       alt: 'Изображение рака',
+      date: '04.07.2021',
+    },
+    {
+      id: 3,
+      name: 'Близнецы',
+      type: 'gemini',
+      img: geminiSvg,
+      alt: 'Изображение близнецов',
+      date: '04.07.2021',
+    },
+    {
+      id: 4,
+      name: 'Лев',
+      type: 'leo',
+      img: leoSvg,
+      alt: 'Изображение льва',
+      date: '04.07.2021',
+    },
+    {
+      id: 5,
+      name: 'Телец',
+      type: 'taurus',
+      img: taurusSvg,
+      alt: 'Изображение тельца',
+      date: '04.07.2021',
+    },
+    {
+      id: 6,
+      name: 'Дева',
+      type: 'virgo',
+      img: virgoSvg,
+      alt: 'Изображение девы',
       date: '04.07.2021',
     },
   ];
@@ -55,7 +75,7 @@ const Symbols: React.FC<ISymbols> = ({ zodiacs }) => {
         <h3 className={styles.symbols__title}>Гороскоп на сегодня</h3>
         <ul className={styles.symbols__zodiac}>
           {zodiacContent.map((zodiac) => (
-            <Link key={`${zodiac.id}__${zodiac.name}`} href={`/zodiacs/${zodiac.id}`}>
+            <Link key={`${zodiac.id}__${zodiac.name}`} href={`/zodiacs/${zodiac.type}`}>
               <a>
                 <SymbolsItem
                   img={zodiac.img}

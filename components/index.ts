@@ -10,6 +10,8 @@ export { default as SymbolsItem } from './mainContent/zodiacs/SymbolsItem';
 export { default as Divination } from './mainContent/divination/Divination';
 export { default as DivinationCard } from './mainContent/divination/DivinationCard';
 
+export { default as Loader } from './helpers/Loader';
+
 export { default as circleImg } from '../public/circle-horoskop.png';
 export { default as infoImg } from '../public/horosckope.jpg';
 export { default as ariesSvg } from '../public/aries.svg';

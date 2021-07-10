@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from '../../styles/layout/MainHeader.module.scss';
 
 const MainHeader: React.FC = () => {
@@ -5,7 +6,11 @@ const MainHeader: React.FC = () => {
     <header className={styles.header}>
       <div className={styles.header__wrapper}>
         <div className={styles.header__top}>
-          <h1 className={styles.header__title}>Судьба по гороскопу</h1>
+          <Link href='/'>
+            <a>
+              <h1 className={styles.header__title}>Глаза судьбы</h1>
+            </a>
+          </Link>
           <h3 className={styles.header__subtitle}>
             Предсказания от лучших астрологов укажут вам правильный путь
           </h3>

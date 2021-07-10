@@ -1,7 +1,7 @@
-import { reducer, rootReducer, RootState } from './reducers';
+import { reducer, RootState } from './reducers';
 import { Context, createWrapper, MakeStore } from 'next-redux-wrapper';
-import { AnyAction, applyMiddleware, createStore, Store, compose } from 'redux';
-import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk';
+import { AnyAction, applyMiddleware, createStore, compose } from 'redux';
+import thunk, { ThunkDispatch } from 'redux-thunk';
 
 declare global {
   interface Window {

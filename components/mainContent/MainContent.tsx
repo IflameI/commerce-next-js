@@ -1,13 +1,8 @@
 import { MainContentInfo, Symbols, Divination } from '..';
-import { useTypedSelector } from '../../redux/typeHooks/useTypedSelector';
 
 import styles from '../../styles/MainContent/MainContent.module.scss';
 
-interface IMainContent {
-  items: any;
-}
-
-const MainContent: React.FC<IMainContent> = ({ items }) => {
+const MainContent: React.FC = () => {
   return (
     <section className={styles.mainContent}>
       <div className={styles.mainContent__top}>
@@ -22,7 +17,7 @@ const MainContent: React.FC<IMainContent> = ({ items }) => {
       <div className={styles.mainContent__content}>
         <MainContentInfo />
         <Divination />
-        <Symbols zodiacs={items.elements[0].elements} />
+        <Symbols />
       </div>
     </section>
   );

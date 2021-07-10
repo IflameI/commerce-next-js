@@ -49,7 +49,7 @@ body {
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   a {
-    color: initial !important;
+    color: inherit !important;
   }
 }
 input,
@@ -93,9 +93,6 @@ h6 {
 body {
   background: #ccc;
   color: #fff;
-  a {
-    color: #fff;
-  }
   font-size: 14px;
 }
 

@@ -5,13 +5,8 @@ export interface zodiacState {
 }
 
 export enum zodiacActionType {
-  FETCH_ZODIAC_PENDING = 'FETCH_ZODIAC_PENDING',
   FETCH_ZODIAC_SUCCESS = 'FETCH_ZODIAC_SUCCESS',
   FETCH_ZODIAC_ERROR = 'FETCH_ZODIAC_ERROR',
-}
-
-interface fetchPendingZodiacActionType {
-  type: zodiacActionType.FETCH_ZODIAC_PENDING;
 }
 
 interface fetchZodiacSuccessType {
@@ -23,7 +18,4 @@ interface fetchZodiacErrorType {
   payload: string;
 }
 
-export type zodiacActions =
-  | fetchPendingZodiacActionType
-  | fetchZodiacSuccessType
-  | fetchZodiacErrorType;
+export type zodiacActions = fetchZodiacSuccessType | fetchZodiacErrorType;
