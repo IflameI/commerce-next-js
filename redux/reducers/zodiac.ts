@@ -1,5 +1,4 @@
 import { zodiacActionType, zodiacActions, zodiacState } from '../../types/zodiacTypeRedux';
-import { HYDRATE } from 'next-redux-wrapper';
 const initialState: zodiacState = {
   items: {},
   loading: false,

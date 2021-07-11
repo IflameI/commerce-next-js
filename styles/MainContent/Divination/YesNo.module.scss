@@ -1,0 +1,44 @@
+.yesNo {
+  &__title {
+    font-size: 34px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 15px;
+    padding-top: 15px;
+  }
+  &__content {
+    position: relative;
+    display: flex;
+    a {
+      display: flex;
+    }
+    img {
+      width: 135px;
+    }
+  }
+  &__subtitle {
+    font-size: 16px;
+    line-height: 18px;
+    color: #000;
+    margin-bottom: 40px;
+  }
+  &__yesNoImg {
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.3s;
+    }
+  }
+  &__row {
+    display: flex;
+    margin: 0 -10px;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    color: #000;
+  }
+  &__text {
+    padding-top: 24px;
+    font-size: 20px;
+    line-height: 22px;
+    color: #000;
+  }
+}

@@ -32,3 +32,5 @@ export { default as loveImg } from '../public/love.jpg';
 export { default as revnostImg } from '../public/revnost.jpg';
 export { default as hristmansImg } from '../public/hristmans.jpg';
 export { default as marriageImg } from '../public/marriage.jpg';
+export { default as insideImg } from '../public/inside.jpg';
+export { default as cardYesNoImg } from '../public/cardYesNo.png';

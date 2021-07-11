@@ -20,6 +20,9 @@
     padding: 0 10px;
     margin-bottom: 25px;
     display: flex;
+    a {
+      display: flex;
+    }
   }
   &__item {
     background: #fff;

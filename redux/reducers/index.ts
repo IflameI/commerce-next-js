@@ -1,10 +1,12 @@
 import { zodiac } from './zodiac';
+import { divination } from './divination';
 
 import { combineReducers } from 'redux';
 import { HYDRATE } from 'next-redux-wrapper';
 
 export const rootReducer = combineReducers({
   zodiac,
+  divination,
 });
 
 export const reducer = (state: any, action: any) => {
