@@ -1,10 +1,11 @@
+import { MongoClient } from 'mongodb';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { cardYesNoImg } from '../../../components';
 import styles from '../../../styles/MainContent/Divination/YesNo.module.scss';
 
-const yesNo = () => {
+const yesNo: React.FC = ({ cards }: any) => {
   return (
     <>
       <div className={styles.yesNo__title}>Расклад карт таро методом да или нет</div>
@@ -15,41 +16,15 @@ const yesNo = () => {
       </div>
       <div className={styles.yesNo__wrapper}>
         <div className={styles.yesNo__content}>
-          <Link href='/divination/yesNo/1'>
-            <a className={styles.yesNo__yesNoImg}>
-              <Image src={cardYesNoImg} alt='cardYesNo' />
-            </a>
-          </Link>
-          <Link href='/divination/yesNo/2'>
-            <a className={styles.yesNo__yesNoImg}>
-              <Image src={cardYesNoImg} alt='cardYesNo' />
-            </a>
-          </Link>
-          <Link href='/divination/yesNo/3'>
-            <a className={styles.yesNo__yesNoImg}>
-              <Image src={cardYesNoImg} alt='cardYesNo' />
-            </a>
-          </Link>
-          <Link href='/divination/yesNo/4'>
-            <a className={styles.yesNo__yesNoImg}>
-              <Image src={cardYesNoImg} alt='cardYesNo' />
-            </a>
-          </Link>
-          <Link href='/divination/yesNo/5'>
-            <a className={styles.yesNo__yesNoImg}>
-              <Image src={cardYesNoImg} alt='cardYesNo' />
-            </a>
-          </Link>
-          <Link href='/divination/yesNo/6'>
-            <a className={styles.yesNo__yesNoImg}>
-              <Image src={cardYesNoImg} alt='cardYesNo' />
-            </a>
-          </Link>
-          <Link href='/divination/yesNo/7'>
-            <a className={styles.yesNo__yesNoImg}>
-              <Image src={cardYesNoImg} alt='cardYesNo' />
-            </a>
-          </Link>
+          {cards.map((card: any) => (
+            <>
+              <Link href={`/divination/yesNo/${card.id}`}>
+                <a className={styles.yesNo__yesNoImg}>
+                  <Image src={cardYesNoImg} alt='cardYesNo' />
+                </a>
+              </Link>
+            </>
+          ))}
         </div>
         <p className={styles.yesNo__text}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, porro? A eos quo iste
@@ -64,3 +39,29 @@ const yesNo = () => {
 };
 
 export default yesNo;
+
+export async function getStaticProps() {
+  const client = await MongoClient.connect(
+    'mongodb+srv://user:APkuFEX1ak1i8GPQ@cluster0.phxkt.mongodb.net/commerce?retryWrites=true&w=majority',
+  );
+  const db = client.db();
+
+  const yesNoCardCollection = db.collection('yesnoCard');
+
+  const initialCards = await yesNoCardCollection.find().toArray();
+
+  const cards = initialCards.sort(function () {
+    return 0.5 - Math.random();
+  });
+
+  client.close();
+  return {
+    props: {
+      cards: cards.map((card) => ({
+        id: card._id.toString(),
+        text: card.text,
+      })),
+    },
+    revalidate: 60,
+  };
+}
