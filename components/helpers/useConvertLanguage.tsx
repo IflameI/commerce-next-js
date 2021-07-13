@@ -16,7 +16,7 @@ const useConvertLanguage = (text: string) => {
           console.error(err);
         });
     }
-  }, [convertedText]);
+  }, [convertedText, text]);
 
   return {
     convertedText,

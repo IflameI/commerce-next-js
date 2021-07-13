@@ -1,0 +1,14 @@
+.horoscope {
+  &__img {
+    img {
+      height: 400px;
+      width: 100%;
+    }
+  }
+  &__text {
+    font-size: 20px;
+    line-height: 22px;
+    color: #000;
+    margin-bottom: 20px;
+  }
+}

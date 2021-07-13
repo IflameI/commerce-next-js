@@ -34,3 +34,5 @@ export { default as hristmansImg } from '../public/hristmans.jpg';
 export { default as marriageImg } from '../public/marriage.jpg';
 export { default as insideImg } from '../public/inside.jpg';
 export { default as cardYesNoImg } from '../public/cardYesNo.png';
+export { default as newYearImg } from '../public/newYear.jpg';
+export { default as compatibilityImg } from '../public/compatibility.jpg';

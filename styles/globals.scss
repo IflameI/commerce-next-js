@@ -96,6 +96,10 @@ body {
   font-size: 14px;
 }
 
+select {
+  display: block;
+}
+
 .container {
   max-width: $mw + px;
   margin: 0 auto;

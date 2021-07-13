@@ -2,18 +2,24 @@ import { MongoClient } from 'mongodb';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { cardYesNoImg } from '../../../components';
+import {
+  cardYesNoImg,
+  DivinationCard,
+  hristmansImg,
+  marriageImg,
+  revnostImg,
+} from '../../../components';
 import styles from '../../../styles/MainContent/Divination/YesNo.module.scss';
 
 const yesNo: React.FC = ({ cards }: any) => {
   return (
     <>
-      <div className={styles.yesNo__title}>Расклад карт таро методом да или нет</div>
-      <div className={styles.yesNo__subtitle}>
+      <h1 className={styles.yesNo__title}>Расклад карт таро методом да или нет</h1>
+      <p className={styles.yesNo__subtitle}>
         Вам необходим ответ или совет как можно скорее? Гадание на картах таро методом да или нет
         даст вам простой ответ «да» или «нет» и прямой совет. Сосредоточьтесь на своем вопросе и
-        выберите свою карту прямо сейчас!
-      </div>
+        выберите карту прямо сейчас!
+      </p>
       <div className={styles.yesNo__wrapper}>
         <div className={styles.yesNo__content}>
           {cards.map((card: any) => (
@@ -27,12 +33,38 @@ const yesNo: React.FC = ({ cards }: any) => {
           ))}
         </div>
         <p className={styles.yesNo__text}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, porro? A eos quo iste
-          eligendi reiciendis tempora quia ducimus, quos quibusdam modi perferendis voluptatibus
-          eius necessitatibus error dolores sed vero tenetur dolorum eveniet. Perferendis impedit
-          soluta perspiciatis aspernatur quae, a eaque corrupti corporis? Beatae perferendis
-          blanditiis illum voluptatibus eveniet mollitia laboriosam iusto itaque placeat.
+          Техника гадания методом да или нет предполагает, что выбранная вами карта Таро содержат
+          символический ответ на вопрос, который вы задали, вслух или мысленно, перед тем, как
+          выбрать карту из колоды. Ведические астрологи говорят, что этот метод гадание дает вам
+          возможность обьяснить истинные причины случившихся событий, предугадать ход событий,
+          узнать настоящие мотивы задействованных лиц. Мастера гадания, на ученые многолетним
+          опытом, говорят, что проводить сеанс гадания несколько раз по одной теме не стоит, это
+          может привести к плохим результатам
         </p>
+      </div>
+      <h1 className={styles.yesNo__suptitle}>Попробуйте другие онлайн гадания</h1>
+      <div className={styles.yesNo__row}>
+        <DivinationCard
+          img={revnostImg}
+          alt='Расклад на измену'
+          name='Гадание на измену в отношениях'
+          text='Сомневаетесь в честности второй половинки? Вас мучают навязчивые мысли об измене? Это онлайн гадание расскажет вам правду'
+          link='yesNo4'
+        />
+        <DivinationCard
+          img={hristmansImg}
+          alt='Изображения нового года'
+          name='Что вас ждет в новом году'
+          text='Этот расклад из карт таро, поможет вам прожить новый год с большим удовольствием. Вы узнаете, какие испытания и сюрпризы вас поджидают в новом году'
+          link='yesNo5'
+        />
+        <DivinationCard
+          img={marriageImg}
+          alt='Счастливая пара'
+          name='Ждет ли меня женитьба'
+          text='Какие вещи мешают моему благополучному супружеству? И каким образом я могу преодолеть их? Если вы задаете себе эти вопросы, это гадание для вас. С помощью него вы сможете ответить на все эти вопросы'
+          link='yesNo6'
+        />
       </div>
     </>
   );

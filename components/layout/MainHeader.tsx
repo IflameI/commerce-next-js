@@ -11,17 +11,29 @@ const MainHeader: React.FC = () => {
               <h1 className={styles.header__title}>Глаза судьбы</h1>
             </a>
           </Link>
-          <h3 className={styles.header__subtitle}>
+          <h2 className={styles.header__subtitle}>
             Предсказания от лучших астрологов укажут вам правильный путь
-          </h3>
+          </h2>
         </div>
         <div className={styles.header__bottom}>
           <nav className={styles.header__nav}>
             <ul className={styles.header__list}>
               <li>Гадание на картах таро</li>
-              <li>Совместимость в любви по знакам зодиака</li>
+              <li>
+                <Link href='/compatibility'>
+                  <a>
+                    <div>Совместимость в любви по знакам зодиака</div>
+                  </a>
+                </Link>
+              </li>
               <li>Сонник от ванги</li>
-              <li>Гороскоп на 2021 год</li>
+              <li>
+                <Link href='/horoscopeNewYear'>
+                  <a>
+                    <div>Гороскоп на 2021 год</div>
+                  </a>
+                </Link>
+              </li>
               <li>Лунный календарь</li>
             </ul>
           </nav>

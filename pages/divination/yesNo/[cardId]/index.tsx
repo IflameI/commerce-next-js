@@ -6,11 +6,11 @@ import styles from '../../../../styles/MainContent/Divination/YesNo.module.scss'
 
 const Card = ({ yesNoData }: any) => {
   const router = useRouter();
-  const onClickButton = (e: any) => {
+  const onClickButton = () => {
     router.push('/divination/yesNo');
   };
   return (
-    <>
+    <section>
       <h1 className={styles.yesNo__title}>Гадание методом да или нет</h1>
       <div className={styles.yesNo__wrapperCards}>
         <div className={styles.yesNo__column}>
@@ -29,7 +29,7 @@ const Card = ({ yesNoData }: any) => {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 export default Card;

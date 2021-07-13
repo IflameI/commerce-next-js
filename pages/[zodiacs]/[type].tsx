@@ -1,10 +1,12 @@
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { useTypedSelector } from '../../redux/typeHooks/useTypedSelector';
 
 import styles from '../../styles/MainContent/Zodiacs/SingleSimbol.module.scss';
 
 import { fetchZodiac } from '../../redux/actions/zodiac';
 import { NextThunkDispatch, wrapper } from '../../redux/store';
-import { useTypedSelector } from '../../redux/typeHooks/useTypedSelector';
+import useConvertLanguage from '../../components/helpers/useConvertLanguage';
 
 import {
   DivinationCard,
@@ -14,15 +16,21 @@ import {
   usuallyCards,
   yesNoImg,
 } from '../../components';
-import useConvertLanguage from '../../components/helpers/useConvertLanguage';
 
 const SymbolsId = () => {
+  const [loading, setLoading] = useState(false);
   const { items } = useTypedSelector((state) => state.zodiac);
   const { convertedText } = useConvertLanguage(items.horoscope);
-
+  useEffect(() => {
+    if (!convertedText) {
+      setLoading(true);
+    } else {
+      setLoading(false);
+    }
+  }, [convertedText]);
   return (
-    <>
-      {!convertedText ? (
+    <section>
+      {loading ? (
         <div className={styles.symbol__loader}>
           <Loader />
         </div>
@@ -48,7 +56,7 @@ const SymbolsId = () => {
                 alt='Весы да или нет'
                 name='Гадание методом да или нет'
                 text='Один из самых древних методов гадания созданный еще во времена основателей ведической астрологии. Вам всего лишь нужно мысленно задать вопрос, после чего вы получите ответ либо положительный ответ, либо отрицательный'
-                link='yesNo3'
+                link='yesNo'
               />
               <DivinationCard
                 img={loveImg}
@@ -61,7 +69,7 @@ const SymbolsId = () => {
           </div>
         </>
       )}
-    </>
+    </section>
   );
 };
 
