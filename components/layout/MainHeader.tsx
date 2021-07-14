@@ -18,7 +18,6 @@ const MainHeader: React.FC = () => {
         <div className={styles.header__bottom}>
           <nav className={styles.header__nav}>
             <ul className={styles.header__list}>
-              <li>Гадание на картах таро</li>
               <li>
                 <Link href='/compatibility'>
                   <a>

@@ -13,7 +13,7 @@ import styles from '../../../styles/MainContent/Divination/YesNo.module.scss';
 
 const yesNo: React.FC = ({ cards }: any) => {
   return (
-    <>
+    <section>
       <h1 className={styles.yesNo__title}>Расклад карт таро методом да или нет</h1>
       <p className={styles.yesNo__subtitle}>
         Вам необходим ответ или совет как можно скорее? Гадание на картах таро методом да или нет
@@ -56,7 +56,7 @@ const yesNo: React.FC = ({ cards }: any) => {
           alt='Изображения нового года'
           name='Что вас ждет в новом году'
           text='Этот расклад из карт таро, поможет вам прожить новый год с большим удовольствием. Вы узнаете, какие испытания и сюрпризы вас поджидают в новом году'
-          link='yesNo5'
+          link='newYear'
         />
         <DivinationCard
           img={marriageImg}
@@ -66,7 +66,7 @@ const yesNo: React.FC = ({ cards }: any) => {
           link='yesNo6'
         />
       </div>
-    </>
+    </section>
   );
 };
 

@@ -1,0 +1,39 @@
+.newYear {
+  &__title {
+    font-size: 34px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 15px;
+    padding-top: 15px;
+  }
+  &__suptitle {
+    font-size: 18px;
+    line-height: 20px;
+    color: #000;
+    margin-bottom: 40px;
+  }
+  &__content {
+    display: flex;
+    justify-content: center;
+  }
+  &__img {
+    width: 180px;
+    cursor: pointer;
+    &:hover {
+      transition: all 0.3s;
+      transform: scale(1.1);
+    }
+  }
+  &__cardInfo {
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+    padding-top: 5px;
+    text-align: center;
+  }
+  &__row {
+    padding-top: 120px;
+    display: flex;
+    color: #000;
+  }
+}

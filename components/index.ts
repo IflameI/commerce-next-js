@@ -36,3 +36,4 @@ export { default as insideImg } from '../public/inside.jpg';
 export { default as cardYesNoImg } from '../public/cardYesNo.png';
 export { default as newYearImg } from '../public/newYear.jpg';
 export { default as compatibilityImg } from '../public/compatibility.jpg';
+export { default as cardNewYearImg } from '../public/cardNewYear.png';
