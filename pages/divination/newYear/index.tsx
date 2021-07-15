@@ -1,48 +1,26 @@
 import Image from 'next/image';
-import { useState } from 'react';
 import {
   cardNewYearImg,
   DivinationCard,
-  loveImg,
+  divinationMoneyImg,
   usuallyCards,
   yesNoImg,
-  revnostImg,
-  newYearImg,
 } from '../../../components';
+import useRandomClickCard from '../../../components/helpers/hooks/useRandomClickCard';
 import styles from '../../../styles/MainContent/Divination/newYear.module.scss';
 
-const newYearData = [
-  {
-    love: [
-      {
-        img: revnostImg,
-        description: 'Some description',
-      },
-      {
-        img: newYearImg,
-        description: 'Some description',
-      },
-    ],
-    career: [{ img: 'Some img', description: 'Some description' }],
-    wellness: [{ img: 'Some img', description: 'Some description' }],
-  },
-];
-
 const NewYear = () => {
-  const [cardLoveImg, setCardLoveImg] = useState<any>();
-
-  const getRandomArbitrary = (min: number, max: number) => {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  };
-  const onClickLoveCard = () => {
-    const randomValue = getRandomArbitrary(0, newYearData[0].love.length - 1);
-    if (randomValue) {
-      setCardLoveImg(newYearData[0].love[randomValue].img);
-    }
-  };
-
+  const {
+    cardLoveImg,
+    cardCareerImg,
+    cardWellnessImg,
+    cardLoveDescription,
+    cardCareerDescription,
+    cardWellnessDescription,
+    onClickCareerCard,
+    onClickWellnessCard,
+    onClickLoveCard,
+  } = useRandomClickCard();
   return (
     <section>
       <h1 className={styles.newYear__title}>Расклад карт таро на события 2021 года</h1>
@@ -57,18 +35,37 @@ const NewYear = () => {
           <div className={styles.newYear__cardInfo}>Любовь</div>
         </div>
         <div className={styles.newYear__item}>
-          <div className={styles.newYear__img}>
-            <Image src={cardNewYearImg} alt='Карта таро' />
+          <div onClick={onClickCareerCard} className={styles.newYear__img}>
+            <Image src={!cardCareerImg ? cardNewYearImg : cardCareerImg} alt='Карта таро' />
           </div>
           <div className={styles.newYear__cardInfo}>Карьера</div>
         </div>
         <div className={styles.newYear__item}>
-          <div className={styles.newYear__img}>
-            <Image src={cardNewYearImg} alt='Карта таро' />
+          <div onClick={onClickWellnessCard} className={styles.newYear__img}>
+            <Image src={!cardWellnessImg ? cardNewYearImg : cardWellnessImg} alt='Карта таро' />
           </div>
           <div className={styles.newYear__cardInfo}>Удача</div>
         </div>
       </div>
+      {cardLoveDescription && (
+        <>
+          <h3 className={styles.newYear__cardTitle}>Любовь</h3>
+          <p className={styles.newYear__cardDescription}>{cardLoveDescription}</p>
+        </>
+      )}
+      {cardCareerDescription && (
+        <>
+          <h3 className={styles.newYear__cardTitle}>Карьера</h3>
+          <p className={styles.newYear__cardDescription}>{cardCareerDescription}</p>
+        </>
+      )}
+      {cardWellnessDescription && (
+        <>
+          <h3 className={styles.newYear__cardTitle}>Удача</h3>
+          <p className={styles.newYear__cardDescription}>{cardWellnessDescription}</p>
+        </>
+      )}
+      <h3 className={styles.newYear__title}>Попробуйте другие онлайн гадания</h3>
       <div className={styles.newYear__row}>
         <DivinationCard
           img={usuallyCards}
@@ -86,11 +83,11 @@ const NewYear = () => {
           link='yesNo'
         />
         <DivinationCard
-          img={loveImg}
-          alt='Любовный пасьянс'
-          name='Любовный пасьянс'
-          text='Этот способ гадания отлично подойдет для людей, которые хотят лучше понять, что происходит в их отношениях. Можно узнать, какие события предвещает будущее  для этого союза и как вторая половинка будет реагировать на них'
-          link='yesNo3'
+          img={divinationMoneyImg}
+          alt='Гадание на денежное состояние'
+          name='Гадание на денежное состояние'
+          text='Счастье за ​​деньги не купишь, но они действительно облегчают жизнь! Это чтение дает советы по зарабатыванию денег и финансовые советы, которые помогут вам разбогатеть (или, по крайней мере, иметь меньше долгов).'
+          link='money'
         />
       </div>
     </section>

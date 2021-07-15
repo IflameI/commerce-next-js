@@ -12,7 +12,7 @@ import {
   scorpioSvg,
   taurusSvg,
   virgoSvg,
-} from '..';
+} from '../..';
 
 const zodiacContent = [
   {

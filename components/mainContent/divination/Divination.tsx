@@ -3,10 +3,10 @@ import {
   DivinationCard,
   usuallyCards,
   yesNoImg,
-  loveImg,
   revnostImg,
   hristmansImg,
   marriageImg,
+  divinationMoneyImg,
 } from '../../';
 
 const Divination: React.FC = () => {
@@ -34,11 +34,11 @@ const Divination: React.FC = () => {
             link='yesNo'
           />
           <DivinationCard
-            img={loveImg}
-            alt='Любовный пасьянс'
-            name='Любовный пасьянс'
-            text='Этот способ гадания отлично подойдет для людей, которые хотят лучше понять, что происходит в их отношениях. Можно узнать, какие события предвещает будущее  для этого союза и как вторая половинка будет реагировать на них'
-            link='yesNo3'
+            img={divinationMoneyImg}
+            alt='Гадание на денежное состояние'
+            name='Гадание на денежное состояние'
+            text='Счастье за ​​деньги не купишь, но они действительно облегчают жизнь! Это чтение дает советы по зарабатыванию денег и финансовые советы, которые помогут вам разбогатеть (или, по крайней мере, иметь меньше долгов).'
+            link='money'
           />
           <DivinationCard
             img={revnostImg}

@@ -1,18 +1,17 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { useTypedSelector } from '../../redux/typeHooks/useTypedSelector';
+import { NextThunkDispatch, wrapper } from '../../redux/store';
 
 import styles from '../../styles/MainContent/Zodiacs/SingleSimbol.module.scss';
-
+import { useTypedSelector } from '../../redux/typeHooks/useTypedSelector';
 import { fetchZodiac } from '../../redux/actions/zodiac';
-import { NextThunkDispatch, wrapper } from '../../redux/store';
-import useConvertLanguage from '../../components/helpers/useConvertLanguage';
+import useConvertLanguage from '../../components/helpers/hooks/useConvertLanguage';
 
 import {
   DivinationCard,
+  divinationMoneyImg,
   insideImg,
   Loader,
-  loveImg,
   usuallyCards,
   yesNoImg,
 } from '../../components';
@@ -59,11 +58,11 @@ const SymbolsId = () => {
                 link='yesNo'
               />
               <DivinationCard
-                img={loveImg}
-                alt='Любовный пасьянс'
-                name='Любовный пасьянс'
-                text='Этот способ гадания отлично подойдет для людей, которые хотят лучше понять, что происходит в их отношениях. Можно узнать, какие события предвещает будущее  для этого союза и как вторая половинка будет реагировать на них'
-                link='yesNo3'
+                img={divinationMoneyImg}
+                alt='Гадание на денежное состояние'
+                name='Гадание на денежное состояние'
+                text='Счастье за ​​деньги не купишь, но они действительно облегчают жизнь! Это чтение дает советы по зарабатыванию денег и финансовые советы, которые помогут вам разбогатеть (или, по крайней мере, иметь меньше долгов).'
+                link='money'
               />
             </div>
           </div>

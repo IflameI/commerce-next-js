@@ -4,11 +4,11 @@ import { useState } from 'react';
 import {
   compatibilityImg,
   DivinationCard,
-  loveImg,
+  divinationMoneyImg,
   usuallyCards,
   yesNoImg,
 } from '../../components';
-import useCompatibility from '../../components/helpers/useCompatibility';
+import useCompatibility from '../../components/helpers/hooks/useCompatibility';
 import styles from '../../styles/Compatibility/compatibility.module.scss';
 
 const Compatibility: React.FC = () => {
@@ -92,6 +92,7 @@ const Compatibility: React.FC = () => {
           Проверить совместимость
         </button>
       </div>
+      <h3 className={styles.compatibility__title}>Попробуйте другие онлайн гадания</h3>
       <div className={styles.compatibility__wrapper}>
         <DivinationCard
           img={usuallyCards}
@@ -109,11 +110,11 @@ const Compatibility: React.FC = () => {
           link='yesNo'
         />
         <DivinationCard
-          img={loveImg}
-          alt='Любовный пасьянс'
-          name='Любовный пасьянс'
-          text='Этот способ гадания отлично подойдет для людей, которые хотят лучше понять, что происходит в их отношениях. Можно узнать, какие события предвещает будущее  для этого союза и как вторая половинка будет реагировать на них'
-          link='yesNo3'
+          img={divinationMoneyImg}
+          alt='Гадание на денежное состояние'
+          name='Гадание на денежное состояние'
+          text='Счастье за ​​деньги не купишь, но они действительно облегчают жизнь! Это чтение дает советы по зарабатыванию денег и финансовые советы, которые помогут вам разбогатеть (или, по крайней мере, иметь меньше долгов).'
+          link='money'
         />
       </div>
     </section>

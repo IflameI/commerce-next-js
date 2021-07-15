@@ -3,21 +3,24 @@
     font-size: 34px;
     font-weight: 500;
     color: #000;
-    margin-bottom: 15px;
-    padding-top: 15px;
   }
   &__suptitle {
     font-size: 18px;
     line-height: 20px;
     color: #000;
     margin-bottom: 40px;
+    padding-top: 10px;
   }
   &__content {
     display: flex;
     justify-content: center;
+    margin-bottom: 40px;
   }
   &__img {
-    width: 180px;
+    img {
+      width: 180px;
+      height: 311px;
+    }
     cursor: pointer;
     &:hover {
       transition: all 0.3s;
@@ -32,8 +35,19 @@
     text-align: center;
   }
   &__row {
-    padding-top: 120px;
+    padding-top: 20px;
     display: flex;
     color: #000;
+  }
+  &__cardDescription {
+    color: #000;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  &__cardTitle {
+    color: #000;
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 600;
   }
 }
