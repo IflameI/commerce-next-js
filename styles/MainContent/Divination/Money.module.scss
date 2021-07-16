@@ -1,19 +1,16 @@
-.yesNo {
+.money {
   &__title {
     font-size: 34px;
     font-weight: 500;
+    margin-bottom: 10px;
     color: #000;
-    margin-bottom: 15px;
-    padding-top: 15px;
   }
-  &__suptitle {
-    font-size: 30px;
-    font-weight: 500;
-    padding-top: 25px;
+  &__subtitle {
     color: #000;
+    font-size: 16px;
+    margin-bottom: 10px;
   }
   &__content {
-    position: relative;
     display: flex;
     a {
       display: flex;
@@ -22,37 +19,15 @@
       width: 135px;
     }
   }
-  &__subtitle {
-    font-size: 18px;
-    line-height: 20px;
-    color: #000;
-    margin-bottom: 40px;
-  }
-  &__yesNoImg {
+  &__img {
     &:hover {
       transform: scale(1.1);
       transition: 0.3s;
     }
   }
-  &__row {
-    display: flex;
-    margin: 0 -10px;
-    flex-wrap: wrap;
-    padding-top: 30px;
-    color: #000;
-  }
-  &__text {
-    padding-top: 24px;
-    font-size: 20px;
-    line-height: 22px;
-    color: #000;
-  }
-  &__wrapperCards {
-    display: flex;
-    margin: 0 -10px;
-    color: #000;
-    padding-top: 20px;
-    align-items: center;
+  &__column {
+    padding: 0 10px;
+    flex: 0 1 50%;
   }
   &__imgCard {
     position: relative;
@@ -62,18 +37,9 @@
       width: 400px;
     }
   }
-  &__column {
-    padding: 0 10px;
-    flex: 0 1 50%;
-  }
   &__name {
     font-size: 24px;
     margin-bottom: 10px;
-  }
-  &__result {
-    font-size: 16px;
-    margin-bottom: 10px;
-    font-weight: 700;
   }
   &__resultText {
     font-size: 18px;
@@ -95,5 +61,25 @@
       transition: all 0.3s;
       background-color: #456690;
     }
+  }
+  &__wrapperCards {
+    display: flex;
+    margin: 0 -10px;
+    color: #000;
+    padding-top: 20px;
+    align-items: center;
+  }
+  &__row {
+    display: flex;
+    margin: 0 -10px;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    color: #000;
+  }
+  &__suptitle {
+    font-size: 30px;
+    font-weight: 500;
+    padding-top: 25px;
+    color: #000;
   }
 }

@@ -11,7 +11,6 @@ const Card = ({ yesNoData }: any) => {
   };
   return (
     <section>
-      <h1 className={styles.yesNo__title}>Гадание методом да или нет</h1>
       <div className={styles.yesNo__wrapperCards}>
         <div className={styles.yesNo__column}>
           <div className={styles.yesNo__imgCard}>
@@ -35,9 +34,7 @@ const Card = ({ yesNoData }: any) => {
 export default Card;
 
 export async function getStaticPaths() {
-  const client = await MongoClient.connect(
-    'mongodb+srv://user:APkuFEX1ak1i8GPQ@cluster0.phxkt.mongodb.net/commerce?retryWrites=true&w=majority',
-  );
+  const client = await MongoClient.connect(process.env.MONGO_DB || '');
   const db = client.db();
 
   const yesNoCardCollection = db.collection('yesnoCard');
@@ -54,9 +51,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context: any) {
   const cardId = context.params.cardId;
 
-  const client = await MongoClient.connect(
-    'mongodb+srv://user:APkuFEX1ak1i8GPQ@cluster0.phxkt.mongodb.net/commerce?retryWrites=true&w=majority',
-  );
+  const client = await MongoClient.connect(process.env.MONGO_DB || '');
   const db = client.db();
 
   const yesNoCardCollection = db.collection('yesnoCard');

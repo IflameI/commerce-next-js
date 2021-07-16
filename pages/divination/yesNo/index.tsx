@@ -22,9 +22,9 @@ const yesNo: React.FC = ({ cards }: any) => {
       </p>
       <div className={styles.yesNo__wrapper}>
         <div className={styles.yesNo__content}>
-          {cards.map((card: any) => (
+          {cards.map((card: any, index: number) => (
             <>
-              <Link href={`/divination/yesNo/${card.id}`}>
+              <Link key={`${index}__${card.id}`} href={`/divination/yesNo/${card.id}`}>
                 <a className={styles.yesNo__yesNoImg}>
                   <Image src={cardYesNoImg} alt='cardYesNo' />
                 </a>
@@ -73,9 +73,7 @@ const yesNo: React.FC = ({ cards }: any) => {
 export default yesNo;
 
 export async function getStaticProps() {
-  const client = await MongoClient.connect(
-    'mongodb+srv://user:APkuFEX1ak1i8GPQ@cluster0.phxkt.mongodb.net/commerce?retryWrites=true&w=majority',
-  );
+  const client = await MongoClient.connect(process.env.MONGO_DB || '');
   const db = client.db();
 
   const yesNoCardCollection = db.collection('yesnoCard');

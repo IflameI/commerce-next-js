@@ -10,4 +10,8 @@ module.exports = {
   images: {
     domains: ['freesvg.org'],
   },
+  env: {
+    MONGO_DB:
+      'mongodb+srv://user:APkuFEX1ak1i8GPQ@cluster0.phxkt.mongodb.net/commerce?retryWrites=true&w=majority',
+  },
 };

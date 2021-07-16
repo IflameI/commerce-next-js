@@ -1,24 +1,23 @@
 import axios from 'axios';
 
 import { Dispatch } from 'redux';
-import { MongoClient, ObjectID } from 'mongodb';
+import { MongoClient, ObjectId, ObjectID } from 'mongodb';
 
 import { divinationActions, divinationActionType } from '../../types/divinationTypeRedux';
 
-export const fetchDivinationCard = (id: string) => {
+export const fetchDivinationCardYesNo = (cardId: string) => {
   return async (dispatch: Dispatch<divinationActions>) => {
     try {
       const client = await MongoClient.connect(
-        'mongodb+srv://user:49aceL0KoweobEh2@cluster0.phxkt.mongodb.net/commerce?retryWrites=true&w=majority',
+        'mongodb+srv://user:APkuFEX1ak1i8GPQ@cluster0.phxkt.mongodb.net/commerce?retryWrites=true&w=majority',
       );
-
       const db = client.db();
 
-      const yesnoCollection = db.collection('yesnoCard');
+      const yesNoCardCollection = db.collection('yesnoCard');
 
-      const response = await yesnoCollection.findOne({ _id: new ObjectID(id) });
+      const selectedCard = await yesNoCardCollection.findOne({ _id: new ObjectId(cardId) });
 
-      dispatch({ type: divinationActionType.FETCH_DIVINATION_SUCCESS, payload: response.data });
+      dispatch({ type: divinationActionType.FETCH_DIVINATION_SUCCESS, payload: selectedCard.data });
 
       client.close();
     } catch (e) {
