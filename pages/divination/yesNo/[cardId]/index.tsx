@@ -4,7 +4,18 @@ import Image from 'next/image';
 
 import styles from '../../../../styles/MainContent/Divination/YesNo.module.scss';
 
-const Card = ({ yesNoData }: any) => {
+type yesNoDataType = {
+  image: string;
+  name: string;
+  text: string;
+  result: string;
+};
+
+interface ILoveData {
+  yesNoData: yesNoDataType;
+}
+
+const Card = ({ yesNoData }: ILoveData) => {
   const router = useRouter();
   const onClickButton = () => {
     router.push('/divination/yesNo');
@@ -48,7 +59,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(context: any) {
+export async function getStaticProps(context: { params: { cardId: string } }) {
   const cardId = context.params.cardId;
 
   const client = await MongoClient.connect(process.env.MONGO_DB || '');

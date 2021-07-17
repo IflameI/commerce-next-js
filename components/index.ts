@@ -50,3 +50,4 @@ export { default as WellnessCardJudgementImg } from '../public/WellnessCardJudge
 export { default as WellnessCardLoversImg } from '../public/WellnesCardLovers.jpg';
 export { default as CardCareerEmperorImg } from '../public/CareerCardEmperor.jpg';
 export { default as divinationMoneyImg } from '../public/divinationMoney.jpg';
+export { default as numerologyImg } from '../public/numerology-reading.jpg';

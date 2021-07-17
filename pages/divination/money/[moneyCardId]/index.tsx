@@ -57,7 +57,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(context: any) {
+export async function getStaticProps(context: { params: { moneyCardId: string } }) {
   const moneyCardId = context.params.moneyCardId;
 
   const client = await MongoClient.connect(process.env.MONGO_DB || '');

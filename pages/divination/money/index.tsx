@@ -1,6 +1,7 @@
 import { MongoClient } from 'mongodb';
 import Link from 'next/link';
 import Image from 'next/image';
+
 import {
   cardYesNoImg,
   DivinationCard,
@@ -9,6 +10,7 @@ import {
   revnostImg,
 } from '../../../components';
 import styles from '../../../styles/MainContent/Divination/Money.module.scss';
+import { cardType } from '../love';
 
 const Money = ({ cards }: any) => {
   return (
@@ -19,7 +21,7 @@ const Money = ({ cards }: any) => {
       </p>
       <div className={styles.money__wrapper}>
         <div className={styles.money__content}>
-          {cards.map((card: any, index: number) => (
+          {cards.map((card: cardType, index: number) => (
             <>
               <Link key={`${index}__${card.id}`} href={`/divination/money/${card.id}`}>
                 <a className={styles.money__img}>
@@ -49,9 +51,9 @@ const Money = ({ cards }: any) => {
         <DivinationCard
           img={marriageImg}
           alt='Счастливая пара'
-          name='Ждет ли меня женитьба'
-          text='Какие вещи мешают моему благополучному супружеству? И каким образом я могу преодолеть их? Если вы задаете себе эти вопросы, это гадание для вас. С помощью него вы сможете ответить на все эти вопросы'
-          link='yesNo6'
+          name='Ежедневное гадание на любовь в отношениях'
+          text='Получите прогноз своей личной жизни с этим гаданием Таро о любви на каждый день. Относитесь к своей романтической жизни с уверенностью.'
+          link='love'
         />
       </div>
     </section>

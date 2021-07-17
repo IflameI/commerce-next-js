@@ -1,0 +1,93 @@
+.love {
+  &__title {
+    font-size: 34px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 15px;
+    padding-top: 15px;
+  }
+  &__suptitle {
+    font-size: 30px;
+    font-weight: 500;
+    padding-top: 25px;
+    color: #000;
+  }
+  &__subtitle {
+    font-size: 18px;
+    line-height: 20px;
+    color: #000;
+    margin-bottom: 40px;
+  }
+  &__content {
+    position: relative;
+    display: flex;
+    a {
+      display: flex;
+    }
+    img {
+      width: 135px;
+    }
+  }
+  &__loveImg {
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.3s;
+    }
+  }
+  &__row {
+    display: flex;
+    margin: 0 -10px;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    color: #000;
+  }
+  &__wrapperCards {
+    display: flex;
+    margin: 0 -10px;
+    color: #000;
+    padding-top: 20px;
+    align-items: center;
+  }
+  &__imgCard {
+    position: relative;
+    height: 510px;
+    img {
+      height: 400px;
+      width: 400px;
+    }
+  }
+  &__column {
+    padding: 0 10px;
+    flex: 0 1 50%;
+  }
+  &__button {
+    display: inline-block;
+    background-color: #1d3048;
+    border-radius: 5px;
+    padding: 15px 20px;
+    min-width: 100px;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+      transition: all 0.3s;
+      background-color: #456690;
+    }
+  }
+  &__text {
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+  &__resultText {
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+  &__name {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+}

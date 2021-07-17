@@ -10,6 +10,7 @@ import {
   revnostImg,
 } from '../../../components';
 import styles from '../../../styles/MainContent/Divination/YesNo.module.scss';
+import { cardType } from '../love';
 
 const yesNo: React.FC = ({ cards }: any) => {
   return (
@@ -22,7 +23,7 @@ const yesNo: React.FC = ({ cards }: any) => {
       </p>
       <div className={styles.yesNo__wrapper}>
         <div className={styles.yesNo__content}>
-          {cards.map((card: any, index: number) => (
+          {cards.map((card: cardType, index: number) => (
             <>
               <Link key={`${index}__${card.id}`} href={`/divination/yesNo/${card.id}`}>
                 <a className={styles.yesNo__yesNoImg}>
@@ -61,9 +62,9 @@ const yesNo: React.FC = ({ cards }: any) => {
         <DivinationCard
           img={marriageImg}
           alt='Счастливая пара'
-          name='Ждет ли меня женитьба'
-          text='Какие вещи мешают моему благополучному супружеству? И каким образом я могу преодолеть их? Если вы задаете себе эти вопросы, это гадание для вас. С помощью него вы сможете ответить на все эти вопросы'
-          link='yesNo6'
+          name='Ежедневное гадание на любовь в отношениях'
+          text='Получите прогноз своей личной жизни с этим гаданием Таро о любви на каждый день. Относитесь к своей романтической жизни с уверенностью.'
+          link='love'
         />
       </div>
     </section>

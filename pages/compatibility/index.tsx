@@ -28,7 +28,7 @@ const Compatibility: React.FC = () => {
   ];
   const [selectedOption, setSelectedOption] = useState(options[0]);
   const [selectedOptionTwo, setSelectedOptionTwo] = useState(options[0]);
-  const [showResult, setShowResult] = useState(false);
+  const [showResult, setShowResult] = useState<boolean>(false);
 
   const onClickShowResult = () => {
     setShowResult(true);

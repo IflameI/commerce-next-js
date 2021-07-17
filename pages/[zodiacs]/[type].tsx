@@ -17,9 +17,10 @@ import {
 } from '../../components';
 
 const SymbolsId = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const { items } = useTypedSelector((state) => state.zodiac);
   const { convertedText } = useConvertLanguage(items.horoscope);
+
   useEffect(() => {
     if (!convertedText) {
       setLoading(true);

@@ -33,7 +33,13 @@ const MainHeader: React.FC = () => {
                   </a>
                 </Link>
               </li>
-              <li>Лунный календарь</li>
+              <li>
+                <Link href='/numerology'>
+                  <a>
+                    <div>Нумерология</div>
+                  </a>
+                </Link>
+              </li>
             </ul>
           </nav>
         </div>
