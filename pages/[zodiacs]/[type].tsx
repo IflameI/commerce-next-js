@@ -38,6 +38,7 @@ const SymbolsId = () => {
         <>
           <div className={styles.symbol__img}>
             <Image src={insideImg} alt='#' />
+            <h2 className={styles.symbol__subtitle}>Ваш гороскоп</h2>
             <p className={styles.symbol__text}>{convertedText}</p>
           </div>
           <div className={styles.symbol__content}>

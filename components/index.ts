@@ -1,5 +1,6 @@
 export { default as MainHeader } from './layout/MainHeader';
 export { default as Layout } from './layout/Layout';
+export { default as NavSite } from './layout/NavSite';
 
 export { default as MainContent } from './mainContent/MainContent';
 export { default as MainContentInfo } from './mainContent/MainContentInfo';
@@ -51,3 +52,4 @@ export { default as WellnessCardLoversImg } from '../public/WellnesCardLovers.jp
 export { default as CardCareerEmperorImg } from '../public/CareerCardEmperor.jpg';
 export { default as divinationMoneyImg } from '../public/divinationMoney.jpg';
 export { default as numerologyImg } from '../public/numerology-reading.jpg';
+export { default as mercuryImg } from '../public/mercury.jpg';

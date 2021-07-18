@@ -2,4 +2,7 @@
   background: #fff;
   height: 100%;
   padding: 20px 76px;
+  @media (max-width: 1112px) {
+    padding: 20px 46px;
+  }
 }

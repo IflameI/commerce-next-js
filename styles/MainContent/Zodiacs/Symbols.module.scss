@@ -17,6 +17,9 @@
       flex: 0 1 16.666%;
       padding-right: 50px;
       margin-bottom: 25px;
+      @media (max-width: 1112px) {
+        padding-right: 40px;
+      }
       img {
         width: 80px;
         height: 80px;

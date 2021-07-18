@@ -18,6 +18,9 @@ const MainHeader: React.FC = () => {
         <div className={styles.header__bottom}>
           <nav className={styles.header__nav}>
             <ul className={styles.header__list}>
+              <div className={styles.header__btn}>
+                <span />
+              </div>
               <li>
                 <Link href='/compatibility'>
                   <a>
@@ -25,7 +28,13 @@ const MainHeader: React.FC = () => {
                   </a>
                 </Link>
               </li>
-              <li>Сонник от ванги</li>
+              <li>
+                <Link href='/mercury'>
+                  <a>
+                    <div>Ретроградный меркурий 2021</div>
+                  </a>
+                </Link>
+              </li>
               <li>
                 <Link href='/horoscopeNewYear'>
                   <a>
