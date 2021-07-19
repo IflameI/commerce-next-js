@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import {
   ariesSvg,
   geminiSvg,
@@ -16,8 +18,6 @@ import {
 
 import styles from '../../../styles/MainContent/Zodiacs/Symbols.module.scss';
 
-import Link from 'next/link';
-
 const Symbols: React.FC = () => {
   const zodiacContent = [
     {
@@ -26,7 +26,6 @@ const Symbols: React.FC = () => {
       type: 'aries',
       img: ariesSvg,
       alt: 'Изображение овна',
-      date: '04.07.2021',
     },
     {
       id: 2,
@@ -34,7 +33,6 @@ const Symbols: React.FC = () => {
       type: 'cancer',
       img: cancerSvg,
       alt: 'Изображение рака',
-      date: '04.07.2021',
     },
     {
       id: 3,
@@ -42,7 +40,6 @@ const Symbols: React.FC = () => {
       type: 'gemini',
       img: geminiSvg,
       alt: 'Изображение близнецов',
-      date: '04.07.2021',
     },
     {
       id: 4,
@@ -50,7 +47,6 @@ const Symbols: React.FC = () => {
       type: 'leo',
       img: leoSvg,
       alt: 'Изображение льва',
-      date: '04.07.2021',
     },
     {
       id: 5,
@@ -58,7 +54,6 @@ const Symbols: React.FC = () => {
       type: 'aries',
       img: taurusSvg,
       alt: 'Изображение тельца',
-      date: '04.07.2021',
     },
     {
       id: 6,
@@ -66,7 +61,6 @@ const Symbols: React.FC = () => {
       type: 'virgo',
       img: virgoSvg,
       alt: 'Изображение девы',
-      date: '04.07.2021',
     },
     {
       id: 7,
@@ -74,7 +68,6 @@ const Symbols: React.FC = () => {
       type: 'libra',
       img: libraSvg,
       alt: 'Изображение весов',
-      date: '04.07.2021',
     },
     {
       id: 8,
@@ -82,7 +75,6 @@ const Symbols: React.FC = () => {
       type: 'scorpio',
       img: scorpioSvg,
       alt: 'Изображение скорпиона',
-      date: '04.07.2021',
     },
     {
       id: 9,
@@ -90,7 +82,6 @@ const Symbols: React.FC = () => {
       type: 'sagittarius',
       img: bowSvg,
       alt: 'Изображение стрельца',
-      date: '04.07.2021',
     },
     {
       id: 10,
@@ -98,7 +89,6 @@ const Symbols: React.FC = () => {
       type: 'capricorn',
       img: capricornSvg,
       alt: 'Изображение козерога',
-      date: '04.07.2021',
     },
     {
       id: 11,
@@ -106,7 +96,6 @@ const Symbols: React.FC = () => {
       type: 'aquarius',
       img: aquaSvg,
       alt: 'Изображение водолея',
-      date: '04.07.2021',
     },
     {
       id: 12,
@@ -114,7 +103,6 @@ const Symbols: React.FC = () => {
       type: 'pisces',
       img: fishSvg,
       alt: 'Изображение рыб',
-      date: '04.07.2021',
     },
   ];
   return (
@@ -125,12 +113,7 @@ const Symbols: React.FC = () => {
           {zodiacContent.map((zodiac) => (
             <Link key={`${zodiac.id}__${zodiac.name}`} href={`/zodiacs/${zodiac.type}`}>
               <a>
-                <SymbolsItem
-                  img={zodiac.img}
-                  date={zodiac.date}
-                  name={zodiac.name}
-                  alt={zodiac.alt}
-                />
+                <SymbolsItem img={zodiac.img} name={zodiac.name} alt={zodiac.alt} />
               </a>
             </Link>
           ))}

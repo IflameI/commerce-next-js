@@ -15,8 +15,23 @@
   &__content {
     position: relative;
     display: flex;
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
     a {
       display: flex;
+      @media (max-width: 767px) {
+        flex: 0 1 25%;
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+      @media (max-width: 550px) {
+        flex: 0 1 33.333%;
+      }
+      @media (max-width: 440px) {
+        flex: 0 1 50%;
+      }
     }
     img {
       width: 135px;
@@ -40,6 +55,7 @@
     flex-wrap: wrap;
     padding-top: 30px;
     color: #000;
+    justify-content: center;
   }
   &__text {
     padding-top: 24px;

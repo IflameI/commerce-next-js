@@ -38,6 +38,8 @@
     padding-top: 20px;
     display: flex;
     color: #000;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   &__cardDescription {
     color: #000;

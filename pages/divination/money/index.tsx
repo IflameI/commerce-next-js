@@ -22,13 +22,13 @@ const Money = ({ cards }: any) => {
       <div className={styles.money__wrapper}>
         <div className={styles.money__content}>
           {cards.map((card: cardType, index: number) => (
-            <>
-              <Link key={`${index}__${card.id}`} href={`/divination/money/${card.id}`}>
+            <div key={`${index}__${card.id}`}>
+              <Link href={`/divination/money/${card.id}`}>
                 <a className={styles.money__img}>
                   <Image src={cardYesNoImg} alt='cardYesNo' />
                 </a>
               </Link>
-            </>
+            </div>
           ))}
         </div>
       </div>

@@ -24,13 +24,13 @@ const yesNo: React.FC = ({ cards }: any) => {
       <div className={styles.yesNo__wrapper}>
         <div className={styles.yesNo__content}>
           {cards.map((card: cardType, index: number) => (
-            <>
-              <Link key={`${index}__${card.id}`} href={`/divination/yesNo/${card.id}`}>
+            <div key={`${index}__${card.id}`}>
+              <Link href={`/divination/yesNo/${card.id}`}>
                 <a className={styles.yesNo__yesNoImg}>
                   <Image src={cardYesNoImg} alt='cardYesNo' />
                 </a>
               </Link>
-            </>
+            </div>
           ))}
         </div>
         <p className={styles.yesNo__text}>

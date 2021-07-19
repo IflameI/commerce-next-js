@@ -12,6 +12,7 @@ export { default as Divination } from './mainContent/divination/Divination';
 export { default as DivinationCard } from './mainContent/divination/DivinationCard';
 
 export { default as Loader } from './helpers/Loader';
+export { default as Burger } from './helpers/Burger/Burger';
 
 export { default as circleImg } from '../public/circle-horoskop.png';
 export { default as infoImg } from '../public/horosckope.jpg';

@@ -12,7 +12,22 @@
   }
   &__content {
     display: flex;
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
     a {
+      @media (max-width: 767px) {
+        flex: 0 1 25%;
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+      @media (max-width: 550px) {
+        flex: 0 1 33.333%;
+      }
+      @media (max-width: 440px) {
+        flex: 0 1 50%;
+      }
       display: flex;
     }
     img {
@@ -75,6 +90,7 @@
     flex-wrap: wrap;
     padding-top: 20px;
     color: #000;
+    justify-content: center;
   }
   &__suptitle {
     font-size: 30px;

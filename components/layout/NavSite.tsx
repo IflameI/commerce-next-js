@@ -9,7 +9,7 @@ interface INavSite {
 const NavSite: React.FC<INavSite> = ({ open }) => {
   return (
     <nav
-      className={classNames(styles.header__top, {
+      className={classNames('header__navTop', {
         open: open,
       })}>
       <ul className={styles.header__list}>
