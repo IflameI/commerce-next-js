@@ -1,30 +1,37 @@
 import { MongoClient } from 'mongodb';
-import Link from 'next/link';
+import Head from 'next/head';
 import Image from 'next/image';
-
+import Link from 'next/link';
 import {
   cardYesNoImg,
   DivinationCard,
+  egyptianImg,
   hristmansImg,
   marriageImg,
-  egyptianImg,
 } from '../../../components';
-import styles from '../../../styles/MainContent/Divination/Money.module.scss';
-import { cardType } from '../love';
 
-const Money = ({ cards }: any) => {
+import styles from '../../../styles/MainContent/Divination/FriendOrFoe.module.scss';
+
+export type cardType = {
+  id: string;
+};
+
+const FriendTarot = ({ cards }: any) => {
   return (
     <section>
-      <h1 className={styles.money__title}>Гадание на денежное состояние</h1>
-      <p className={styles.money__subtitle}>
-        Откройте одну из карт ниже, что бы узнать, какие советы, звезды могут вам предложить
+      <Head>
+        <title>Друг или враг онлайн гадание на картах таро</title>
+      </Head>
+      <h1 className={styles.friend__title}>Гадание по методу Египетских астрологов</h1>
+      <p className={styles.friend__subtitle}>
+        Выберите одну из карт, чтобы получить ответы и руководство для своей личной жизни
       </p>
-      <div className={styles.money__wrapper}>
-        <div className={styles.money__content}>
+      <div className={styles.friend__wrapper}>
+        <div className={styles.friend__content}>
           {cards.map((card: cardType, index: number) => (
             <div key={`${index}__${card.id}`}>
-              <Link href={`/divination/money/${card.id}`}>
-                <a className={styles.money__img}>
+              <Link href={`/divination/friend-or-foe/${card.id}`}>
+                <a className={styles.friend__friendImg}>
                   <Image src={cardYesNoImg} alt='cardYesNo' />
                 </a>
               </Link>
@@ -32,8 +39,8 @@ const Money = ({ cards }: any) => {
           ))}
         </div>
       </div>
-      <h1 className={styles.money__suptitle}>Попробуйте другие онлайн гадания</h1>
-      <div className={styles.money__row}>
+      <h1 className={styles.friend__suptitle}>Попробуйте другие онлайн гадания</h1>
+      <div className={styles.friend__row}>
         <DivinationCard
           img={egyptianImg}
           alt='Расклад на любовь'
@@ -61,15 +68,15 @@ const Money = ({ cards }: any) => {
   );
 };
 
-export default Money;
+export default FriendTarot;
 
 export async function getStaticProps() {
   const client = await MongoClient.connect(process.env.MONGO_DB || '');
   const db = client.db();
 
-  const moneyCardCollection = db.collection('moneyCard');
+  const friendCardCollection = db.collection('friendCard');
 
-  const initialCards = await moneyCardCollection.find().toArray();
+  const initialCards = await friendCardCollection.find().toArray();
 
   const cards = initialCards.sort(function () {
     return 0.5 - Math.random();

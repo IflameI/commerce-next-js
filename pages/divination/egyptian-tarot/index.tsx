@@ -9,25 +9,25 @@ import {
   yesNoImg,
 } from '../../../components';
 
-import styles from '../../../styles/MainContent/Divination/Love.module.scss';
+import styles from '../../../styles/MainContent/Divination/Egyptian.module.scss';
 
 export type cardType = {
   id: string;
 };
 
-const Love = ({ cards }: any) => {
+const EgyptianTarot = ({ cards }: any) => {
   return (
     <section>
-      <h1 className={styles.love__title}>Расклад карт таро на любовь в отношениях</h1>
-      <p className={styles.love__subtitle}>
-        Узнавайте, что вас ждет каждый день в романтических отношениях, читая рассклад о любви.
+      <h1 className={styles.egyptian__title}>Гадание по методу Египетских астрологов</h1>
+      <p className={styles.egyptian__subtitle}>
+        Выберите одну из карт, чтобы получить ответы и руководство для своей личной жизни
       </p>
-      <div className={styles.love__wrapper}>
-        <div className={styles.love__content}>
+      <div className={styles.egyptian__wrapper}>
+        <div className={styles.egyptian__content}>
           {cards.map((card: cardType, index: number) => (
             <div key={`${index}__${card.id}`}>
-              <Link href={`/divination/love/${card.id}`}>
-                <a className={styles.love__loveImg}>
+              <Link href={`/divination/egyptian-tarot/${card.id}`}>
+                <a className={styles.egyptian__egyptianImg}>
                   <Image src={cardYesNoImg} alt='cardYesNo' />
                 </a>
               </Link>
@@ -35,8 +35,8 @@ const Love = ({ cards }: any) => {
           ))}
         </div>
       </div>
-      <h1 className={styles.love__suptitle}>Попробуйте другие онлайн гадания</h1>
-      <div className={styles.love__row}>
+      <h1 className={styles.egyptian__suptitle}>Попробуйте другие онлайн гадания</h1>
+      <div className={styles.egyptian__row}>
         <DivinationCard
           img={usuallyCards}
           alt='Расклад из карт'
@@ -63,15 +63,15 @@ const Love = ({ cards }: any) => {
   );
 };
 
-export default Love;
+export default EgyptianTarot;
 
 export async function getStaticProps() {
   const client = await MongoClient.connect(process.env.MONGO_DB || '');
   const db = client.db();
 
-  const loveCardCollection = db.collection('loveCard');
+  const egyptianCardCollection = db.collection('egyptianCard');
 
-  const initialCards = await loveCardCollection.find().toArray();
+  const initialCards = await egyptianCardCollection.find().toArray();
 
   const cards = initialCards.sort(function () {
     return 0.5 - Math.random();

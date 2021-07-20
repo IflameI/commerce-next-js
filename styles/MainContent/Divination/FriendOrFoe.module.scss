@@ -1,4 +1,4 @@
-.yesNo {
+.friend {
   &__title {
     font-size: 34px;
     font-weight: 500;
@@ -12,8 +12,13 @@
     padding-top: 25px;
     color: #000;
   }
+  &__subtitle {
+    font-size: 18px;
+    line-height: 20px;
+    color: #000;
+    margin-bottom: 40px;
+  }
   &__content {
-    position: relative;
     display: flex;
     @media (max-width: 767px) {
       flex-wrap: wrap;
@@ -37,13 +42,7 @@
       width: 135px;
     }
   }
-  &__subtitle {
-    font-size: 18px;
-    line-height: 20px;
-    color: #000;
-    margin-bottom: 40px;
-  }
-  &__yesNoImg {
+  &__friendImg {
     &:hover {
       transform: scale(1.1);
       transition: 0.3s;
@@ -57,29 +56,24 @@
     color: #000;
     justify-content: center;
   }
-  &__text {
-    padding-top: 24px;
-    font-size: 20px;
-    line-height: 22px;
-    color: #000;
-  }
   &__wrapperCards {
     display: flex;
     margin: 0 -10px;
     color: #000;
     padding-top: 20px;
-    align-items: center;
     @media (max-width: 991.98px) {
       flex-wrap: wrap;
     }
+    align-items: center;
   }
   &__imgCard {
     position: relative;
-    height: 510px;
+    height: 570px;
+    width: 350px;
     @media (max-width: 991.98px) {
       height: 450px;
       text-align: center;
-      width: 300px;
+      width: 270px;
     }
     img {
       height: 400px;
@@ -96,29 +90,6 @@
       align-items: center;
     }
   }
-  &__name {
-    font-size: 24px;
-    margin-bottom: 10px;
-    @media (max-width: 991.98px) {
-      padding-top: 20px;
-    }
-  }
-  &__result {
-    font-size: 16px;
-    margin-bottom: 10px;
-    font-weight: 700;
-    @media (max-width: 991.98px) {
-      text-align: center;
-    }
-  }
-  &__resultText {
-    font-size: 18px;
-    line-height: 20px;
-    margin-bottom: 20px;
-    @media (max-width: 991.98px) {
-      text-align: center;
-    }
-  }
   &__button {
     display: inline-block;
     background-color: #1d3048;
@@ -133,6 +104,26 @@
     &:hover {
       transition: all 0.3s;
       background-color: #456690;
+    }
+  }
+  &__text {
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+  &__resultText {
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 20px;
+    @media (max-width: 991.98px) {
+      text-align: center;
+    }
+  }
+  &__name {
+    font-size: 24px;
+    margin-bottom: 10px;
+    @media (max-width: 991.98px) {
+      padding-top: 20px;
     }
   }
 }

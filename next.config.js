@@ -8,7 +8,7 @@ module.exports = {
     ];
   },
   images: {
-    domains: ['freesvg.org'],
+    domains: ['freesvg.org', 'i.pinimg.com'],
   },
   env: {
     MONGO_DB:

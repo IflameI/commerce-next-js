@@ -7,7 +7,7 @@ import {
   DivinationCard,
   hristmansImg,
   marriageImg,
-  revnostImg,
+  egyptianImg,
 } from '../../../components';
 import styles from '../../../styles/MainContent/Divination/YesNo.module.scss';
 import { cardType } from '../love';
@@ -46,11 +46,12 @@ const yesNo: React.FC = ({ cards }: any) => {
       <h1 className={styles.yesNo__suptitle}>Попробуйте другие онлайн гадания</h1>
       <div className={styles.yesNo__row}>
         <DivinationCard
-          img={revnostImg}
-          alt='Расклад на измену'
-          name='Гадание на измену в отношениях'
-          text='Сомневаетесь в честности второй половинки? Вас мучают навязчивые мысли об измене? Это онлайн гадание расскажет вам правду'
-          link='yesNo4'
+          img={egyptianImg}
+          alt='Расклад на любовь'
+          name='Расклад карт таро методом Египетских астрологов'
+          text=' Прикоснитесь к древней мудрости фараонов, чтобы найти ответы и руководство в своей личной
+            жизни'
+          link='egyptian-tarot'
         />
         <DivinationCard
           img={hristmansImg}
