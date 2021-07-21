@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Head from 'next/head';
 
 import styles from '../../styles/Mercury/Mercury.module.scss';
 import { mercuryImg } from '../../components';
@@ -6,6 +7,12 @@ import { mercuryImg } from '../../components';
 const Mercury = () => {
   return (
     <section>
+      <Head>
+        <title>Что случится во время ретроградного меркурия 2021 года </title>
+        <meta
+          httpEquiv='Content-Type'
+          content='Ретроградный меркурий — одно из самых захватывающих событий в современной астрологии. Многие гадалки и предсказатели получают огромную мощь во время этого события. Узнайте, чего стоит ожидать обычным людям.'></meta>
+      </Head>
       <h1 className={styles.mercury__title}>Что такое ретроградный Меркурий?</h1>
       <div className={styles.mercury__img}>
         <Image src={mercuryImg} alt='Космос' />

@@ -4,9 +4,9 @@ import '../styles/globals.scss';
 import { wrapper } from '../redux/store';
 
 //Доделать сео остальных страниц
-//Заменить id в url на понятное описание
-//favicon
-
+//ok
+//404
+//sitemap
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Layout>

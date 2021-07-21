@@ -2,11 +2,18 @@ import Image from 'next/image';
 
 import styles from '../../styles/Numerology/Numerology.module.scss';
 import { numerologyImg } from '../../components';
+import Head from 'next/head';
 
 const Numerology = () => {
   return (
     <section>
-      <h1 className={styles.numerology__title}>ОБЗОР НУМЕРОЛОГИИ</h1>
+      <Head>
+        <title>Ангельская нумерология — лучший предсказатель</title>
+        <meta
+          httpEquiv='Content-Type'
+          content='Нумерология отлично справляется с предсказаниями судеб людей, их поступков и желаний. С помощью ангельской нумерологии вы легко превратите врага в друга'></meta>
+      </Head>
+      <h1 className={styles.numerology__title}>ОБЗОР ЧУДОТВОРНОЙ НУМЕРОЛОГИИ</h1>
       <div className={styles.numerology__img}>
         <Image src={numerologyImg} alt='Гороскоп нумерологии' />
       </div>

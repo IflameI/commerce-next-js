@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -42,10 +43,16 @@ const Compatibility: React.FC = () => {
   );
   return (
     <section className={styles.compatibility}>
+      <Head>
+        <title>Совместимость женщины и мужчины по знаку зодиака</title>
+        <meta
+          httpEquiv='Content-Type'
+          content='Насколько сильна ваша совместимость в отношениях? Сочетается ли его знак зодиака мужчины с вашим женским? Узнайте ответ на эти вопросы с помощью древнего метода гадание'></meta>
+      </Head>
       <div className={styles.compatibility__image}>
         <Image src={compatibilityImg} alt='Любовный гороскоп' />
       </div>
-      <h1 className={styles.compatibility__title}>Совместимость в любви</h1>
+      <h1 className={styles.compatibility__title}>Совместимость знаков зодиака в любви</h1>
       <p className={styles.compatibility__text}>
         Узнайте, будет ли ваше партнерство успешным. Некоторые знаки неба, естественно, хорошо
         работают вместе, но другим нужно идти на компромисс, чтобы заставить отношения работать!

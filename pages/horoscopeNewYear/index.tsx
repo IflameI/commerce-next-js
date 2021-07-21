@@ -3,10 +3,17 @@ import Image from 'next/image';
 import styles from '../../styles/Horoscope/horoscope.module.scss';
 
 import { newYearImg } from '../../components';
+import Head from 'next/head';
 
 const Horoscope: React.FC = () => {
   return (
     <section className={styles.horoscope}>
+      <Head>
+        <title>Общий для всех знаков зодиака горосокоп на 2021 год</title>
+        <meta
+          httpEquiv='Content-Type'
+          content='Обобщенный гороскоп для мужчин и женщин на события 2021 года, составленный мастером ведической астрологии. Узнайте уже сегодня ваше будущее'></meta>
+      </Head>
       <div className={styles.horoscope__img}>
         <Image objectFit='cover' src={newYearImg} alt=' Новый 2021 год' />
       </div>
