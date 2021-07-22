@@ -1,5 +1,6 @@
 import { MongoClient, ObjectId } from 'mongodb';
 import { useRouter } from 'next/dist/client/router';
+import Head from 'next/head';
 import Image from 'next/image';
 
 import styles from '../../../../styles/MainContent/Divination/YesNo.module.scss';
@@ -22,6 +23,9 @@ const Card = ({ yesNoData }: ILoveData) => {
   };
   return (
     <section>
+      <Head>
+        <title>Расклад да или нет </title>
+      </Head>
       <div className={styles.yesNo__wrapperCards}>
         <div className={styles.yesNo__column}>
           <div className={styles.yesNo__imgCard}>

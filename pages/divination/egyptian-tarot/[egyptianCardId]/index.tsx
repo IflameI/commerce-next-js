@@ -1,5 +1,6 @@
 import { MongoClient, ObjectId } from 'mongodb';
 import { useRouter } from 'next/dist/client/router';
+import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../../../../styles/MainContent/Divination/Egyptian.module.scss';
 
@@ -20,6 +21,9 @@ const EgyptianCard = ({ egyptianData }: IEgyptianData) => {
   };
   return (
     <section>
+      <Head>
+        <title>Расклад по методике древних египтян</title>
+      </Head>
       <div className={styles.egyptian__wrapperCards}>
         <div className={styles.egyptian__column}>
           <div className={styles.egyptian__imgCard}>

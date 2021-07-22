@@ -21,10 +21,13 @@ const FriendTarot = ({ cards }: any) => {
     <section>
       <Head>
         <title>Друг или враг онлайн гадание на картах таро</title>
+        <meta
+          httpEquiv='Content-Type'
+          content='Используйте онлайн гадание друг или враг, что бы узнать настоящую сущность выбранного человека. С помощью этого расклада можно увидеть истинную сущность души'></meta>
       </Head>
-      <h1 className={styles.friend__title}>Гадание по методу Египетских астрологов</h1>
+      <h1 className={styles.friend__title}>Гадание на истинную сущность человека</h1>
       <p className={styles.friend__subtitle}>
-        Выберите одну из карт, чтобы получить ответы и руководство для своей личной жизни
+        Выберите одну из карт, чтобы узнать является человек другом или врагом вам
       </p>
       <div className={styles.friend__wrapper}>
         <div className={styles.friend__content}>
@@ -39,7 +42,7 @@ const FriendTarot = ({ cards }: any) => {
           ))}
         </div>
       </div>
-      <h1 className={styles.friend__suptitle}>Попробуйте другие онлайн гадания</h1>
+      <h2 className={styles.friend__suptitle}>Попробуйте другие онлайн гадания</h2>
       <div className={styles.friend__row}>
         <DivinationCard
           img={egyptianImg}

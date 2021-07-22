@@ -1,5 +1,6 @@
 import { MongoClient, ObjectId } from 'mongodb';
 import { useRouter } from 'next/dist/client/router';
+import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../../../../styles/MainContent/Divination/Love.module.scss';
 
@@ -20,6 +21,9 @@ const LoveCard = ({ loveData }: ILoveData) => {
   };
   return (
     <section>
+      <Head>
+        <title>Расклад карт таро на любовь</title>
+      </Head>
       <div className={styles.love__wrapperCards}>
         <div className={styles.love__column}>
           <div className={styles.love__imgCard}>

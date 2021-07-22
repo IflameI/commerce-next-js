@@ -1,5 +1,6 @@
 import { MongoClient, ObjectId } from 'mongodb';
 import { useRouter } from 'next/dist/client/router';
+import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../../../../styles/MainContent/Divination/Money.module.scss';
 
@@ -20,6 +21,9 @@ const MoneyCard: React.FC<IMoneyCard> = ({ moneyData }) => {
   };
   return (
     <section>
+      <Head>
+        <title>Расклад для привлечения денег</title>
+      </Head>
       <div className={styles.money__wrapperCards}>
         <div className={styles.money__column}>
           <div className={styles.money__imgCard}>

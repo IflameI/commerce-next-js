@@ -11,10 +11,17 @@ import {
 } from '../../../components';
 import styles from '../../../styles/MainContent/Divination/Money.module.scss';
 import { cardType } from '../love';
+import Head from 'next/head';
 
 const Money = ({ cards }: any) => {
   return (
     <section>
+      <Head>
+        <title>Онлайн гадание на картах таро для привлечения денег</title>
+        <meta
+          httpEquiv='Content-Type'
+          content='Если ваши денежные дела в последнее время идут плохо, воспользуйтесь онлайн гаданием для привлечения денег. В ходе этого гадания вы получите советы, которые определенно помогут вам в жизни'></meta>
+      </Head>
       <h1 className={styles.money__title}>Гадание на денежное состояние</h1>
       <p className={styles.money__subtitle}>
         Откройте одну из карт ниже, что бы узнать, какие советы, звезды могут вам предложить
@@ -32,7 +39,7 @@ const Money = ({ cards }: any) => {
           ))}
         </div>
       </div>
-      <h1 className={styles.money__suptitle}>Попробуйте другие онлайн гадания</h1>
+      <h2 className={styles.money__suptitle}>Попробуйте другие онлайн гадания</h2>
       <div className={styles.money__row}>
         <DivinationCard
           img={egyptianImg}

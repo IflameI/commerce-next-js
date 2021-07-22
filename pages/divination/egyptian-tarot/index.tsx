@@ -1,4 +1,5 @@
 import { MongoClient } from 'mongodb';
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -18,6 +19,12 @@ export type cardType = {
 const EgyptianTarot = ({ cards }: any) => {
   return (
     <section>
+      <Head>
+        <title>Онлайн гадание от египетских астрологов</title>
+        <meta
+          httpEquiv='Content-Type'
+          content='Зарубежные мастера предсказаний поделились методом гадания для любых жизненных ситуаций. Воспользуйтесь этим гаданием и получите советы, которые могут стать решающими для вашей жизни.'></meta>
+      </Head>
       <h1 className={styles.egyptian__title}>Гадание по методу Египетских астрологов</h1>
       <p className={styles.egyptian__subtitle}>
         Выберите одну из карт, чтобы получить ответы и руководство для своей личной жизни
@@ -35,7 +42,7 @@ const EgyptianTarot = ({ cards }: any) => {
           ))}
         </div>
       </div>
-      <h1 className={styles.egyptian__suptitle}>Попробуйте другие онлайн гадания</h1>
+      <h2 className={styles.egyptian__suptitle}>Попробуйте другие онлайн гадания</h2>
       <div className={styles.egyptian__row}>
         <DivinationCard
           img={usuallyCards}

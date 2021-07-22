@@ -1,4 +1,5 @@
 import { MongoClient } from 'mongodb';
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -18,6 +19,12 @@ export type cardType = {
 const Love = ({ cards }: any) => {
   return (
     <section>
+      <Head>
+        <title>Онлайн гадание на любовь</title>
+        <meta
+          httpEquiv='Content-Type'
+          content='Истинная любовь и хорошие отношения - залог счастливой жизни. Именно поэтому мы приготовили бесплатное онлайн гадание на любовь, которое поможет вам совершать правильные поступки, не разрушая отношения '></meta>
+      </Head>
       <h1 className={styles.love__title}>Расклад карт таро на любовь в отношениях</h1>
       <p className={styles.love__subtitle}>
         Узнавайте, что вас ждет каждый день в романтических отношениях, читая рассклад о любви.
@@ -35,7 +42,7 @@ const Love = ({ cards }: any) => {
           ))}
         </div>
       </div>
-      <h1 className={styles.love__suptitle}>Попробуйте другие онлайн гадания</h1>
+      <h2 className={styles.love__suptitle}>Попробуйте другие онлайн гадания</h2>
       <div className={styles.love__row}>
         <DivinationCard
           img={usuallyCards}

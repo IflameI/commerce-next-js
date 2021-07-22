@@ -1,4 +1,5 @@
 import { MongoClient } from 'mongodb';
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -15,6 +16,12 @@ import { cardType } from '../love';
 const yesNo: React.FC = ({ cards }: any) => {
   return (
     <section>
+      <Head>
+        <title>Да или нет онлайн гадание на картах таро</title>
+        <meta
+          httpEquiv='Content-Type'
+          content='Самый древний способ гадание да или нет, уже многие века помогает  людям в трудных жизненных ситуациях, отвечая на их вопросы коротко и предельно ясно'></meta>
+      </Head>
       <h1 className={styles.yesNo__title}>Расклад карт таро методом да или нет</h1>
       <p className={styles.yesNo__subtitle}>
         Вам необходим ответ или совет как можно скорее? Гадание на картах таро методом да или нет
@@ -43,7 +50,7 @@ const yesNo: React.FC = ({ cards }: any) => {
           может привести к плохим результатам
         </p>
       </div>
-      <h1 className={styles.yesNo__suptitle}>Попробуйте другие онлайн гадания</h1>
+      <h2 className={styles.yesNo__suptitle}>Попробуйте другие онлайн гадания</h2>
       <div className={styles.yesNo__row}>
         <DivinationCard
           img={egyptianImg}

@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Image from 'next/image';
 import {
   cardNewYearImg,
@@ -23,6 +24,12 @@ const NewYear = () => {
   } = useRandomClickCard();
   return (
     <section>
+      <Head>
+        <title>Онлайн гадание на события в вашей жизни</title>
+        <meta
+          httpEquiv='Content-Type'
+          content='Любовь, карьера и удача — это три главных компонента успешной жизни. Если вы хотите узнать, как лучше повести себя в этих сферах, данное онлайн гадание отлично подойдет вам'></meta>
+      </Head>
       <h1 className={styles.newYear__title}>Расклад карт таро на события 2021 года</h1>
       <p className={styles.newYear__suptitle}>
         Откройте карты ниже, если хотите узнать, как сложится ваша судьба в будущем

@@ -1,5 +1,4 @@
 import { MongoClient, ObjectId } from 'mongodb';
-import Head from 'next/head';
 
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
