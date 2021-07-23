@@ -10,7 +10,6 @@ const Layout: React.FC = ({ children }) => {
       <div className={styles.wrapper}>
         <main>
           <Head>
-            <html lang='ru' />
             <title>Глаза судьбы — бесплатное онлайн гадание на картах таро </title>
             <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
             <meta name='viewport' content='width=device-width, initial-scale=1'></meta>

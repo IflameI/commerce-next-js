@@ -1,0 +1,17 @@
+.error {
+  height: 100vh;
+  &__row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  &__item {
+    p {
+      color: #000;
+      font-size: 24px;
+      text-align: center;
+    }
+  }
+}

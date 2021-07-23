@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import styles from '../../../styles/MainContent/Divination/Divination.module.scss';
+import LazyLoad from 'react-lazyload';
 
 interface IDivinationCard {
   img: any;
@@ -18,7 +19,9 @@ const DivinationCard: React.FC<IDivinationCard> = ({ img, alt, name, text, link 
         <a>
           <div className={styles.divination__item}>
             <div className={styles.divination__img}>
-              <Image src={img} alt={alt} />
+              <LazyLoad height={250} once>
+                <Image src={img} alt={alt} />
+              </LazyLoad>
             </div>
             <div className={styles.divination__textContent}>
               <h4 className={styles.divination__name}>{name}</h4>

@@ -1,6 +1,8 @@
 import Image from 'next/image';
+import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { NextThunkDispatch, wrapper } from '../../redux/store';
+import { useRouter } from 'next/dist/client/router';
 
 import styles from '../../styles/MainContent/Zodiacs/SingleSimbol.module.scss';
 import { useTypedSelector } from '../../redux/typeHooks/useTypedSelector';
@@ -16,10 +18,63 @@ import {
   yesNoImg,
 } from '../../components';
 
+const zodiacList = [
+  {
+    name: 'овна',
+    type: 'aries',
+  },
+  {
+    name: 'рака',
+    type: 'cancer',
+  },
+  {
+    name: 'близнецов',
+    type: 'gemini',
+  },
+  {
+    name: 'льва',
+    type: 'leo',
+  },
+  {
+    name: 'тельца',
+    type: 'aries',
+  },
+  {
+    name: 'девы',
+    type: 'virgo',
+  },
+  {
+    name: 'весов',
+    type: 'libra',
+  },
+  {
+    name: 'скорпиона',
+    type: 'scorpio',
+  },
+  {
+    name: 'стрельца',
+    type: 'sagittarius',
+  },
+  {
+    name: 'козерога',
+    type: 'capricorn',
+  },
+  {
+    name: 'водолея',
+    type: 'aquarius',
+  },
+  {
+    name: 'рыбы',
+    type: 'pisces',
+  },
+];
+
 const SymbolsId = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const { items } = useTypedSelector((state) => state.zodiac);
   const { convertedText } = useConvertLanguage(items.horoscope);
+  const [zodiacName, setZodiacName] = useState();
+  const router = useRouter();
 
   useEffect(() => {
     if (!convertedText) {
@@ -28,8 +83,24 @@ const SymbolsId = () => {
       setLoading(false);
     }
   }, [convertedText]);
+
+  //Динамический роут
+
+  useEffect(() => {
+    zodiacList.forEach(function (zodiacItem: any) {
+      if (zodiacItem.type === router.query.type) {
+        setZodiacName(zodiacItem.name);
+      }
+    });
+  }, [router.query.type]);
   return (
     <section>
+      <Head>
+        <title>Гороскоп для {zodiacName} на сегодня</title>
+        <meta
+          httpEquiv='Content-Type'
+          content='Астрологи говорят, что зная гороскоп на сегодня можно заранее подготовиться к неожиданным ситуациям, поэтому мы составили лучший ведический гороскоп  для каждого знака зодиака'></meta>
+      </Head>
       {loading ? (
         <div className={styles.symbol__loader}>
           <Loader />
